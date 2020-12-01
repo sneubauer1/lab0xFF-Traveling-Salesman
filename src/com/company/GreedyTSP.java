@@ -71,13 +71,13 @@ public class GreedyTSP {
     Stack<Integer> getShortestPath() {
 
         Stack<Integer> shortestPath = new Stack<>();
-        shortestPath.push(v[0]);
+        shortestPath.push(0);
 
         Vertex currentVertex  = lastVertex;
 
         while(currentVertex != null)
         {
-            shortestPath.push(v[currentVertex.getId()]);
+            shortestPath.push(currentVertex.getId());
             currentVertex = currentVertex.getPrev();
         }
         Collections.reverse(shortestPath);

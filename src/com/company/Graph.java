@@ -13,7 +13,8 @@ public class Graph {
     public Graph(int V) {
         this.V = V;
         matrix = new double[V][V];
-        v = randomizeVertices();
+        //v = randomizeVertices();
+        v = new int[V];
     }
 
     public void addEdge(int source, int destination, double weight) {
@@ -34,6 +35,8 @@ public class Graph {
 
     public double[][] generateRandomCostMatrix( int maxE) {
 
+        //System.out.println("N: "+this.V);
+
         for(int i = 0; i < this.V; i++) {
             for(int j = i; j < this.V; j++) {
                 if(i == j) {
@@ -48,11 +51,13 @@ public class Graph {
                 }
             }
         }
-        printGraph();
+        //printGraph();
         return matrix;
     }
 
     public double[][] generateRandomEuclideanCostMatrix( int maxCoord){
+
+        //System.out.println("N: "+this.V);
 
         for(int i = 0; i < this.V; i++) {
             for(int j = i; j < this.V; j++) {
@@ -64,14 +69,14 @@ public class Graph {
                     double xVal2 = Math.random() * maxCoord;
                     double yVal1 = Math.random() * maxCoord;
                     double yVal2 = Math.random() * maxCoord;
-                    double d = dist(xVal1,xVal2,yVal1,yVal2);
+                    double d =  dist(xVal1,xVal2,yVal1,yVal2);
                     addEdge(i,j,d);
                     //matrix[i][j] =  d;
                     //matrix[j][i] =  d;
                 }
             }
         }
-        printGraph();
+        //printGraph();
         return matrix;
     }
 
