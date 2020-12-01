@@ -73,13 +73,13 @@ public class BruteForceTSP {
 
         Stack<Integer> shortestPath = new Stack<>();
         //Stack<Integer> shortestPath = new Stack<>();
-        shortestPath.push(0);
+        shortestPath.push(v[0]);
 
         Vertex currentVertex  = lastVertex;
 
         while(currentVertex != null)
         {
-            shortestPath.push(currentVertex.getId());
+            shortestPath.push(v[currentVertex.getId()]);
             currentVertex = currentVertex.getPrev();
         }
 

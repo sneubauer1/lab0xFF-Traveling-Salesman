@@ -13,15 +13,15 @@ public class Graph {
     public Graph(int V) {
         this.V = V;
         matrix = new double[V][V];
-        //v = randomizeVertices();
-        v = new int[V];
+        v = randomizeVertices();
+        //v = new int[V];
     }
 
     public void addEdge(int source, int destination, double weight) {
         //add edge
         matrix[source][destination]= weight;
 
-        //add bak edge for undirected graph
+        //add back edge for undirected graph
         matrix[destination][source] = weight;
     }
 
@@ -105,7 +105,7 @@ public class Graph {
             y[s] = Math.round(yTemp * 1000) / 1000.0d;
         }
         System.out.print("V: ");
-        for (int i = 0; i < this.V; i++) {
+        for (int i = 0; i < 6; i++) {
             System.out.print(v[i]+" "+"("+x[i]+","+y[i]+") ");
         }
         System.out.println();
@@ -131,7 +131,7 @@ public class Graph {
         double distanceadj = getAdjDistance(d);
 
         System.out.println("Expected Cost: "+this.V*distanceadj);
-        printCircleGraph();
+        //printCircleGraph();
 
         return matrix;
     }

@@ -20,14 +20,14 @@ public class Main {
 
         //readGraphFromFile("./src/matrix1.txt");
 
-        //N = 8;
-        //int r = 100;
+        N = 60;
+        int r = 100;
 
         //for( N = 4; N<= 15; N++) {
 
             //Graph graph = new Graph(N);
 
-            //double[][] matrix = graph.generateRandomCostMatrix(r);
+            //double[][] matrix = graph.generateRandomCircularGraphCostMatrix(r);
 
             //writeGraphToFile(matrix);
 
@@ -48,9 +48,9 @@ public class Main {
             while (!bestPath.isEmpty())
                 System.out.print("-> " + bestPath.pop());*/
 
-            //System.out.println("\n----------------------------------------");
+            /*System.out.println("\n----------------------------------------");
 
-            /*DynamicProgrammingTSP dynamicProgrammingTSP = new DynamicProgrammingTSP(matrix);
+            DynamicProgrammingTSP dynamicProgrammingTSP = new DynamicProgrammingTSP(matrix);
             System.out.println("\nDynamic Programming Approach: ");
             double pathCost = dynamicProgrammingTSP.getShortestPathCost();
             System.out.println("Path Cost: " + pathCost);

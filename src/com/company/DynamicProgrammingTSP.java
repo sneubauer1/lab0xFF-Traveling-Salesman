@@ -89,7 +89,7 @@ class DynamicProgrammingTSP {
 
         int lastIndex = root;
         int state = endState;
-        shortestPath.add(root);
+        shortestPath.add(v[root]);
 
         // Reconstruct TSP path from memory table.
         for (int i = 1; i < n; i++) {
@@ -105,12 +105,12 @@ class DynamicProgrammingTSP {
                 }
             }
 
-            shortestPath.add(index);
+            shortestPath.add(v[index]);
             state = state ^ (1 << index);
             lastIndex = index;
         }
 
-        shortestPath.add(root);
+        shortestPath.add(v[root]);
         //Collections.reverse(shortestPath);
         return Math.round(shortestPathCost*100) / 100.0d;
     }
